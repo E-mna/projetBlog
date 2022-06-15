@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+body{
+  box-sizing: border-box ;
+  font-family: "Comic Sans MS", cursive;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* changement scroll */
+  word-break: normal;
+  background: rgb(0, 0, 0);
+}
+
+header {
+  width: 100%;
+  position: fixed; /* fixer le header */
+  z-index: 999; /* lasser le header toujous la en scrollant */
+  padding: 10px 30px;
+     
+}
+
+.btnInscription{
+  margin-right: 9px;
+  margin-left: 3px;
+}
+
+
+
+
+
+/* ------------Acceuil-------- */
+
+
+.container {
+  width: 100%;
+  min-height: 100vh; /*hauteur de la fenêtre*/
+  padding-top: 240px  ;
+  padding-left: 40%;
+  align-items: center;
+  background: url(images/font.webp) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* l'image ne bouge pas quand je scrolle */
+  text-align: center;
+  font-size: 50px;
+  color: rgb(202, 199, 199);
+  font-family: 'Nothing You Could Do', cursive;
+ 
+}
+
+
+
+/* footer */
+
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  background-color: black;
+}
+
+footer p {
+  padding-top: 14px;
+  color: rgb(155, 148, 148);
+}
+
+
+
+
+
+
+/* ---------Page Inscription----------*/
+
+ 
+ 
+
+.pageInscription{
+  background: url(images/ins.webp)no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh; /*hauteur de la fenêtre*/
+}
+.card{
+top: 50%;
+left: 30%;
+position: absolute;
+transform: translate(-50%, -50%);
+background: rgba(255, 255, 255, 0.3);
+text-align: center;
+padding: 50px 120px ;
+border-radius: 15px;
+color: white;
+}
+
+.h1-main{
+    padding-bottom: 30px;
+    color: rgb(81, 160, 170);
+
+}
+
+input{
+padding: 5px;
+margin-bottom: 10px;
+border: 3px;
+border-radius: 3px 10px;
+text-align: center;
+}
+
+
+
+.pageConnexion{
+  background: url(images/majj.jpeg)no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh; /*hauteur de la fenêtre*/
+}
+
+
+/* -------------  Articles ------------*/
+
+.article {
+  background: rgb(18, 18, 36);
+  background: linear-gradient(
+    56deg,
+    rgba(18, 18, 36, 1) 4%,
+    rgba(0, 0, 0, 1) 67%,
+    rgba(26, 26, 32, 1) 81%
+  );
+}
+.article p,
+strong {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.card-article, .AddArticle{
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  min-height: 15em;
+  width: 25em;
+  overflow: hidden;
+  margin: 30px;
+  transition: 0.8s ease;
+}
+.AddArticle {
+ margin-left:35%;
+  padding: 1em;
+  text-align: center;
+
+}
+
+.card-article:hover {
+  transform: scale(1.1);
+}
+.card-article:hover .img-article {
+  opacity: 0.9;
+}
+
+.img-article  img {
+  width: 100% ;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+}
+video {
+  width: 100%;
+}
+
+ 
+ 
+h2{
+    text-align: center;
+    color: rgb(23, 55, 196);
+    font-family: monospace;
+    padding-top: 30px;
+}
+h5{
+  text-align: center;
+}
+
+textarea{
+    border-radius: 10px;
+}
+
+
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  background-color: black;
+}
+
+footer p {
+  padding-top: 14px;
+  color: rgb(155, 148, 148);
+}
+
+
+
+
+
+@media screen and (max-width: 800px) {
+  
+    
+ header{
+     background: rgb(0, 0, 0, 0.9);
+ }   
+.container {
+  font-size: 30px;
+  padding-top: 80px;
+}
+
+
+ 
+.card{
+top: 50%;
+left: 50% !important;
+position: absolute;
+transform: translate(-50%, -50%);
+background: rgba(255, 255, 255, 0.3);
+text-align: center;
+padding: 5px 60px !important ;
+ margin-top: 40px !important;
+border-radius: 15px;
+color: white;
+}
+
+.card-article{
+  width: 20em;
+  overflow: hidden;
+  margin: 30px;
+  transition: 0.8s ease;
+}
+.AddArticle {
+  width: 20em;
+  overflow: hidden;
+  margin: 30px;
+  transition: 0.8s ease;
+}
+
+
+}
+
+
+
+
+
+/* for Js  */
+
+/* #saveBtn{
+  display: none;
+} */

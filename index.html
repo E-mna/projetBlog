@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- CSS bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Mon Blog</title>
+</head>
+<body>
+     
+ <header class="main">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparente ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html" target="_blank">Acceuil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+         
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="articles.html" target="_blank" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Articles
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="articles.html" target="_blank">Ajouter un article</a></li>
+      
+          </ul>
+        </li>
+      </ul>
+      <div class="ms-auto p-2  ">
+      
+        <a href="connexion.html"  target="_blank">
+        <input type="button" value="Connexion">
+        </a>
+
+        <a href="inscription.html" target="_blank">
+        <input type="button" value="Inscription">
+        </a>
+       </div>
+    </div>
+  </div>
+</nav>
+   </header>
+ 
+ 
+
+<section class="container">
+Bienvenue votre blog Alapajo
+</section>
+
+<section class="article  container-fluid">
+   <h2 class="title ">Articles</h2>
+        <div class="content row  ">
+            <div class="card-article col-lg-6 ">
+                <div class="img-article">
+                    <img src="images/maj.webp" alt="lo">
+                </div>
+                <div class="info-article">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quis rem maiores officia obcaecati omnis placeat saepe blanditiis recusandae, nesciunt unde laborum architecto nobis, asperiores veritatis dolore, aut odio dignissimos.
+                        <br><br><strong><a href="articles.html" target="_blank">Savoir plus</a></strong></p>
+                </div>
+            </div>
+
+            <div class="card-article col-lg-6"   >
+                <div class="img-article">
+                    <img src="images/4.jpeg" alt="lo">
+                </div>
+                <div class="info-article">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et magnam fugit voluptatibus esse illum repellat maiores, quaerat error voluptas! Quidem voluptates deserunt eveniet placeat labore. Temporibus unde ex explicabo recusandae.
+                        <br><br><strong><a href="articles.html" target="_blank">Savoir plus</a></strong></p>
+                </div>
+            </div>
+
+            <div class="card-article col-lg-6">
+                <div class="img-article">
+                    <img src="images/2.webp" alt="lo">
+                </div>
+                <div class="info-article">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa at libero iusto corrupti! Quidem expedita doloremque corporis iusto eveniet velit earum tempora! Et doloremque aliquid ullam cum, excepturi magnam vero!
+                        <br><br><strong><a href="articles.html" target="_blank">Savoir plus</a></strong></p>
+                </div>
+            </div>
+
+            <div class="card-article col-lg-6">
+                <div class="img-article">
+                    <img src="images/6.jpeg" alt="lo">
+                </div>
+                <div class="info-article">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident maxime fugit neque perspiciatis saepe consequatur, inventore ullam officia cumque magni assumenda ad voluptate sit cupiditate. Labore sunt quidem accusamus odit.
+                        <br><br><strong><a href="articles.html" target="_blank">Savoir plus</a></strong></p>
+                </div>
+            </div>  
+        </div>
+</section>
+
+
+
+ 
+ <!-------------------footer--------------------->
+
+  <footer>
+           <p> © Réalisé par Emna Ben Hammamia | 2022</p>
+           <div class="social-icons">
+              <a href="https://github.com/E-mna" target="_blank"><i class="bi bi-github"></i></i></a>
+              <a href="https://www.linkedin.com/in/emna-ben" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="mailto:emnabenhammamia@gmail.com" target="_blank"><i class="fas fa-envelope-square" ></i></i></a>
+           </div>
+    </footer>
+ 
+     <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
