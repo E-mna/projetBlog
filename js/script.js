@@ -37,8 +37,7 @@
 	
  
 	
-});
-
+ 
 document.getElementById("email2").addEventListener("input", function() {
 	var paragrapheErreur = document.getElementById("erreur");
  

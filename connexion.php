@@ -9,7 +9,10 @@
 </head>
 <body>
  
-   
+   <?php
+  require "./includes/header.php";
+ ?>
+ 
 
 <section class="pageConnexion">
 
@@ -41,6 +44,13 @@
 <p style="color: red;" id="erreur"></p>
 
 </section>
+
+
+
+<!-------- footer ---------->
+<?php
+  require "./includes/footer.php";
+ ?>
 
     <script src="script.js"></script>
 </body>

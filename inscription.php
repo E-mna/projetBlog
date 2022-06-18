@@ -29,10 +29,16 @@
         </fom>
 </div>
 
- 
-
-
 </section>
+
+
+
+<!-------- footer ---------->
+<?php
+  require "./includes/footer.php";
+ ?>
+
+
 
     <script src="script.js"></script>
 </body>
