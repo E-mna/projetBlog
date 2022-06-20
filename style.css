@@ -194,9 +194,20 @@ footer p {
   padding-top: 14px;
   color: rgb(155, 148, 148);
 }
+/* -------------  Contact ------------*/
 
-
-
+#formContact{
+ top: 50%;
+left: 30%;
+position: absolute;
+transform: translate(-50%, -50%);
+background: rgba(226, 224, 224, 0.3);
+text-align: center;
+padding: 50px 120px ;
+border-radius: 15px;
+color: white;
+}
+ 
 
 
 @media screen and (max-width: 800px) {
