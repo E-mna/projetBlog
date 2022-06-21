@@ -1,53 +1,82 @@
  
-<?php $title = 'Articles'  ?>
-<?php $nav = 'articles'  ?>
+<?php 
 
+  $title = 'Ajouter un article';
+  $nav = 'articles';
 
-
-
-<body>
-
-
- <?php
   require "./includes/header.php";
+  require "./includes/navbar.php";
+  
  ?>
- 
-
-
-    </section>
 
 
 
-     <h2 class="title ">Articles</h2>
+
+
+  <h2 class="title ">Articles</h2>
     
            <div class="AddArticle ">
-                <form class="info-article" >
+                <form method="POST" class="info-article" >
                     <h6>Titre de l'article :</h6>
-                    <input type="text" class="titre-art" id="textareaTitreArticle">
+                    <input type="text" name='titre_article' class="titre-art" id="textareaTitreArticle">
                      <h6>Catégorie de l'article :</h6>
-                     <input type="text" class="cat-art" id="textareaCatArticle">
+                     <input type="text" name="catégorie" class="cat-art" id="textareaCatArticle">
                      <h6>Choisir une photo</h6>
                     <input type="file" value="Ajouter une image" id="addImage"  > 
-                    <input   name=""  cols="35" rows="10" placeholder="Ici taper votre article..." id="textareaArticle" /><br>
+                    <input   name="description"  cols="35" rows="10" placeholder="Ici taper votre article..." id="textareaArticle" /><br>
                     <input type="submit" value="Valider"  id="button" >
                 </form>
             </div>
 
 
- <!------ Cates des articles ------->
 <?php
-  require "./includes/cardArticle.php";
- ?>
+// je vérifie et je manipule mon formulaire
+if (!empty($_POST)){
+  print_r($_POST);
+  var_dump($_POST);
+    if(
+      isset($_POST['titre_article'], $_POST['catégorie'], $_POST['description'])
+      && !empty($_POST['titre_article']) && !empty($_POST['catégorie']) && !empty($_POST['description'])
+    ){
+       // je récupère mes données
+       $title = $_POST['titre_article'];
+       $catégorie = $_POST['catégorie'];
+       $description = $_POST['description'];
+       // je me connecte à ma BDD
+       require_once "./includes/connect.php";
+       // j'ecris la requete
+       //$sql= "INSERT INTO articles VALUES (null, '$title', '$catégorie', '$description') ";
+       $sql= "INSERT INTO articles VALUES (null, :titreArticle, :categ, :descrip , NOW()) ";
+       // je prépare la requete 
+       $stmt = $pdo->prepare($sql);
+       // j'injecte les valeurs à mes paramaètres
+       $stmt->bindValue(':titreArticle', $title, PDO::PARAM_STR);
+       $stmt->bindValue(':categ', $catégorie, PDO::PARAM_STR);
+       $stmt->bindValue(':descrip', $description, PDO::PARAM_STR);
+       //j'execute ma requete
+      
+       $stmt->execute();
+       var_dump($stmt->debugDumpParams());
+    }else{
+      echo (" Vous devez remplir tous les champs");
+    }
+} 
+?>
+
+ 
+
+
+
+   
   
 
- <!------ footer ------->
+
+
 
 <?php
+
+  require "./includes/cardArticle.php";
   require "./includes/footer.php";
  ?>
  
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="articles.js"></script>
-</body>
-</html>
+   

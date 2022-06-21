@@ -1,38 +1,16 @@
-<?php $title = 'Contact'  ?>
-<?php $nav = 'contact'  ?>
-
-
-
-<!------ navbar  ------->
 <?php
-  require "./includes/header.php";
- ?>
- 
 
 
- <?php 
+   $title = 'Contact';
+   $nav = 'contact';
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
- 
-$dsn ='mysql:dbname=blog;host=localhost;port=8889;charset=utf8';
-$user ="blog";
-$pwd='vu5G9yFa8WAWTxQe';
 
-$pdo = new PDO($dsn, $user, $pwd, [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-]);
 
- 
-if ($dsn){
-  echo' connexion reussi à la base de données';
-}else{
-  echo' Pas de connexion à la base de données';
-}
+   require "./includes/header.php";
+   require "./includes/navbar.php";
+
 ?>
-
-
+ 
 
 
 <section id="formContact">
@@ -55,18 +33,25 @@ if ($dsn){
 
 
 
- <?php
+
+<?php
   
   if(isset($_POST['envoyer']))
   {
+    // je récupère mes données
     $nom = ucwords($_POST['nom']);
     $prenom = ucwords($_POST['prenom']);
     $age =  $_POST['age'];
     $adresse = $_POST['adresse'];
     $description = $_POST['description'];
 
+    // je me connecte à la BDD
+    require "./includes/connect.php";
+   
+   // j'ecris ma requete
    $sql = "INSERT INTO contact VALUES (null, '$nom', '$prenom', $age, '$adresse', '$description')";
 
+  //  
    $stmt = $pdo->prepare($sql);  
     
    $stmt->bindValue(':nom', "$nom", PDO::PARAM_STR);
@@ -79,11 +64,9 @@ if ($dsn){
    $rst = $stmt->execute();
 
    echo $stmt->debugDumpParams();
- 
+   echo "formulaire envoyé";
   
   }
 
-
-?>
 
    

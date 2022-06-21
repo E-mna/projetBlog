@@ -1,11 +1,11 @@
-<?php $title = 'Connexion'  ?>
- 
+<?php 
 
-<body>
+
+$title = 'Connexion'; 
  
-   <?php
   require "./includes/header.php";
- ?>
+  require "./includes/navbar.php";
+?>
  
 
 <section class="pageConnexion">
@@ -46,6 +46,4 @@
   require "./includes/footer.php";
  ?>
 
-    <script src="script.js"></script>
-</body>
-</html>
+   

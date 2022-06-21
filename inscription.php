@@ -1,8 +1,9 @@
- <?php $title = 'Inscription'  ?>
-
-<body>
-    
-<?php  include 'includes/header.php'; ?>
+<?php 
+ 
+$title = 'Inscription';  
+require 'includes/header.php'; 
+require "./includes/navbar.php";
+?>
  
 
 <section class="pageInscription">
@@ -26,13 +27,11 @@
 
 
 
-<!-------- footer ---------->
+ 
 <?php
   require "./includes/footer.php";
  ?>
 
 
 
-    <script src="script.js"></script>
-</body>
-</html>
+   
