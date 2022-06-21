@@ -14,9 +14,7 @@ $pdo = new PDO($dsn, $user, $pwd, [
 ]);
 
  
-if ($dsn){
-  echo' connexion reussi à la base de données';
-}else{
+if (!$dsn){
   echo' Pas de connexion à la base de données';
 }
 ?>
