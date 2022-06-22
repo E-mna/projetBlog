@@ -3,8 +3,8 @@ $title = 'Acceuil';
 $nav = 'index' ;
 
 
-  require "./includes/header.php";
-  require "./includes/navbar.php";
+  require "includes/header.php";
+  require "includes/navbar.php";
 
 ?>
  

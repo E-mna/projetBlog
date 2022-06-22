@@ -12,7 +12,7 @@ if (!empty($_POST)){
        $catégorie = $_POST['catégorie'];
        $description = $_POST['description'];
        // je me connecte à ma BDD
-       require_once "./includes/connect.php";
+       require_once "connect.php";
        // j'ecris la requete
        //$sql= "INSERT INTO articles VALUES (null, '$title', '$catégorie', '$description') ";
        $sql= "INSERT INTO articles VALUES (null, :titreArticle, :categ, :descrip , NOW()) ";
@@ -37,7 +37,7 @@ if (!empty($_POST)){
  <h2 class="title ">Articles</h2>
     
            <div class="AddArticle ">
-                <form action="./includes/ajoutArticle.php" method="POST"  class="info-article" >
+                <form action="ajoutArticle.php" method="POST"  class="info-article" >
                     <h6>Titre de l'article :</h6>
                     <input type="text" name='titre_article' class="titre-art" id="textareaTitreArticle">
                      <h6>Catégorie de l'article :</h6>

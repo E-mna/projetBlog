@@ -18,5 +18,3 @@ if (!$dsn){
   echo' Pas de connexion à la base de données';
 }
 ?>
-
-

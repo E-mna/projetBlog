@@ -3,8 +3,8 @@
 
 $title = 'Connexion'; 
  
-  require "./includes/header.php";
-  require "./includes/navbar.php";
+  require_once "./includes/header.php";
+  require_once "./includes/navbar.php";
 ?>
  
 
@@ -16,21 +16,15 @@ $title = 'Connexion';
         </div>
         <div class="content"  id="connexion">
             
-            <div class="form-group">
-                <label for="">Pseudo</label>
-                <br>
+            <form class="form-group" method="POST">
+                <label for="">Pseudo</label><br>
                 <input type="text" name="pseudo" placeholder="Pseudo" id="pseudo"> <br>
+                <label for="">Mot de passe</label><br>
+                 <input type="password" name="mdp" placeholder="Mot de passe" id="motDePasse">
+                 <input type="submit" value="Se connecter">
+           </form> <br>
+             
 
-            </div>
-            <div class="form-group">
-                <label for="">Email</label>
-                <br>
-                <input type="email" name="email" placeholder="Email" id="email"> <br> 
-                 
-            </div>
-            <input type="password" name="motDePasse" placeholder="Mot de passe" id="motDePasse"> <br>
-            <br>
-             <input type="submit" value="Se connecter">
         </div>
     </div>
 
@@ -40,10 +34,41 @@ $title = 'Connexion';
 </section>
 
 
-
-<!-------- footer ---------->
 <?php
-  require "./includes/footer.php";
- ?>
+ 
 
-   
+$pseudo =$_POST['pseudo'] ?? null;
+$mdp =$_POST['mdp'] ?? null;
+$mdp = htmlspecialchars($mdp);
+
+// je vérifie le mdp est true et le pseudo soit valide
+if(!is_null($mdp) && !is_null($pseudo)) {
+  // je me connecte à la BDD
+  require_once "./includes/connect.php";
+  // je prépare ma requete 
+  $req = $pdo->prepare("SELECT * FROM utilisateurs  WHERE pseudo = :pseudo");
+  //j'execute et je récupère
+  $req->execute([
+    ':pseudo' => $pseudo,   
+  ]);
+  // si je trouve mon utilisateur en BDD 
+  if($req->rowCount()=== 1){
+    //je le lie à ma var $user
+    $user = $req->fetch();
+
+    //si le mdp eqt identique
+    if(password_verify($mdp, $user['mdp'])){
+      session_start();
+      $_SESSION['utilisateurs']= $user;
+      var_dump($_SESSION);
+    } else {
+      throw new Exception("erreur avec ton mdp");
+    }
+  }  else {
+    throw new Exception("erreur avec ton pseudo");
+  }
+}
+
+
+
+?>

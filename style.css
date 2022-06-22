@@ -108,10 +108,14 @@ text-align: center;
 
 
 .pageConnexion{
-  background: url(images/majj.jpeg)no-repeat;
-  background-size: cover;
+  background: white;
+/*   background-size: cover;
+   background: url(images/majj.jpeg)no-repeat;
+  background: white;
+  
   background-position: center center;
-  min-height: 100vh; /*hauteur de la fenêtre*/
+  min-height: 100vh; /*hauteur de la fenêtre
+   */
 }
 
 

@@ -9,14 +9,14 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link <?php if ($nav=== './index.php') : ?> active <?php endif; ?>" aria-current="page" href="index.php" target="_blank">Acceuil</a>
+          <a class="nav-link <?php if ($nav=== 'acceuil.php') : ?> active <?php endif; ?>" aria-current="page" href="acceuil.php" target="_blank">Acceuil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if ($nav=== './contact.php') : ?> active <?php endif; ?>" href="contact.php">Contact</a>
+          <a class="nav-link <?php if ($nav=== 'contact.php') : ?> active <?php endif; ?>" href="contact.php">Contact</a>
         </li>
          
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle <?php if ($nav=== 'articles.php') : ?> active <?php endif; ?>" href="pageArticles.php" target="_blank" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle <?php if ($nav=== 'pageArticle.php') : ?> active <?php endif; ?>" href="pageArticles.php" target="_blank" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articles
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
