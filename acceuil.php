@@ -27,7 +27,10 @@ Bienvenue votre blog Alapajo
  
 <!------ Cates des articles ------->
 <?php
+  
   require "./includes/cardArticle.php";
+  require_once "includes/card.php";
+  require_once "includes/card.php";
   require "./includes/footer.php";
 ?>
  

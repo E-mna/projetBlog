@@ -4,10 +4,12 @@
   $title = 'Ajouter un article';
   $nav = 'articles';
 
-  require "./includes/header.php";
-  require "./includes/navbar.php";
-  require_once "includes/ajoutArticle.php";
-  require_once "includes/cardArticle.php"
+  require_once "./includes/header.php";
+  require_once "./includes/navbar.php";
+  require "./includes/ajoutArticle.php";
+  require "includes/cardArticle.php";
+  require "includes/card.php";
+
  ?>
 
 

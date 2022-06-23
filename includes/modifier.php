@@ -1,8 +1,5 @@
- 
-
-
-
 <?php
+
  
    try {
         require_once 'connect.php';
@@ -23,12 +20,7 @@
             ':id' => $id
         ]);
 
-        echo '
-            <div class="alert alert-success" role="alert">
-                 <strong>Bravo!</strong> Article supprimé avec succès !
-                 <a href="cardArticle.php" class="alert-link"> Voir tous les articles </a>.
-            </div>
-            ';
+         
 
     } catch (Exception $exception) {
         echo '
@@ -40,7 +32,8 @@
     }
 
 
-?>
-    
 
- 
+
+
+
+?>

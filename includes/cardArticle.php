@@ -24,16 +24,16 @@ foreach($data as $articles){
                     <img src='images/maj.webp' alt='img'>
                 </div>
                 <div class='info-article'  id='editArticle'   >
-                    <h5 id='title' >Titre de l'article: {$articles['titre_article']} </h5>
+                    <h5 id='title' >Titre de l'article: {$articles['titre_article']}    </h5>
                     <h6 id='cat'>Catégorie:{$articles['catégorie']}</h6>
                     <p id='edit'>{$articles['description']}</p> <br>
                         <form action='supprimer.php' method='POST'>
-                          <input type='hidden' name='id' value='{$articles['id_article']}' id='editBtn'>
-                          <input type='button' value='Supprimer l'article' class='remove'><br>
+                          <input type='hidden' name='id' value='{$articles['id']}' id='editBtn'>
+                          <input type='submit'  value='Supprimer l'article' class='remove'><br>
                         </form>
                         <form action='modifier.php' method='POST'>
-                          <input type='hidden' name'id' value='{$articles['id_article']}' id='editBtn'>
-                          <input type='button' value='Modifier l\'article' id='editBtn'><br>
+                          <input type='hidden' name'id' value='{$articles['id']}' id='editBtn'>
+                          <input type='button' name='edit'  value='Modifier l'article' id='editBtn'><br>
                         </form>
                       
                 </div>

@@ -16,7 +16,7 @@
         </li>
          
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle <?php if ($nav=== 'pageArticle.php') : ?> active <?php endif; ?>" href="pageArticles.php" target="_blank" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle <?php if ($nav=== 'pageArticle.php') : ?> active <?php endif; ?>" href="pageArticle.php" target="_blank" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articles
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
