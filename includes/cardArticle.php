@@ -1,4 +1,5 @@
 <?php
+// AFFICHAGE ARTICLE
 require_once "header.php";
 // connexion à la BDD
 require_once "connect.php";
@@ -35,7 +36,7 @@ foreach($data as $articles){
                           <input type='submit'  value='Supprimer l'article' class='remove'><br>
                         </form>
                         <form action='modifier.php' method='POST'>
-                          <input type='hidden' name'id' value='{$articles['id']}' id='editBtn'>
+                          <input type='hidden' name='id' value='{$articles['id']}' id='editBtn'>
                           <input type='submit'   value='Modifier l'article' id='editBtn'><br>
                         </form>
                       

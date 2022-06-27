@@ -23,7 +23,6 @@ if (!empty($_POST)){
        $stmt->bindValue(':categ', $catégorie, PDO::PARAM_STR);
        $stmt->bindValue(':descrip', $description, PDO::PARAM_STR);
        //j'execute ma requete
-      
        $stmt->execute();
        var_dump($stmt->debugDumpParams());
     }else{

@@ -8,35 +8,36 @@
         $id = $_POST['id'] ?? false;
         $id = (int)$id;
 
+        var_dump($_POST);
+
         //si il n'est pas valide, alorsune erreur (fin d'execution)
         if ($id <= 0) {
-            throw new Exception('Erreur lors de la suppression de l\'article (id)');
+            throw new Exception('Erreur lors de la modification de l\'article (id)');
         }
 
         //je prépare ma requete
-        $req = $pdo->prepare('SELECT * FROM articles WHERE id = :id');
+        $req = $pdo->prepare('select * FROM articles WHERE id = :id');
         // j'execute avec les parametres besoin
         $req->execute([
             ':id' => $id
         ]);
-
-
  
-        $articles = $req->fetch(PDO::FETCH_ASSOC) ?? null;
+        //$articles = $req->fetch(PDO::FETCH_ASSOC) ?? null;
+        $articles = $req->fetch();
 
-         
+         var_dump($articles);
 
     } catch (Exception $exception) {
         echo '
             <div class="alert alert-danger" role="alert">
                 A simple danger alert—check it out!
-                <strong>Erreur!</strong> <a href="#" class="alert-link">Une erreur est survenue : ' . $exception->getMessage() . '</a> and try submitting again.
+                <strong>Erreur!</strong> <a href="#" class="alert-link"> hacfhjze Une erreur est survenue : ' . $exception->getMessage() . '</a> and try submitting again.
              </div>
             ';
     }
 
 
-    // je récupère 
+    // je récupère les nfos du formulaire
     $id = $_POST['id'] ?? false;
     $id = (int)$id;
     $title = $_POST['titre_article'] ?? false;
@@ -52,15 +53,15 @@
                try{
                    // je me connecte
                    require_once 'connect.php';
-                   // je prépare ma requete
-                   $req = $pdo->prepare('UPDATE articles SET  titre_article = :title, catégorie = :categ, desription = :descrip , NOW() WHERE id = :id  ');
+                   // je prépare ma requete avec des variables "SQL"
+                   $req = $pdo->prepare('UPDATE articles SET  titre_article = :title, catégorie = :categ, description = :descrip, date_creation = NOW() WHERE id = :id  ');
                    // j'execute
                    $req->execute([
-                       
+                     //j'associe les variables formulaire aux variables sql
                      ':id' => $id,
-                     ':titre_article' => $title,
-                     ':catégorie' => $categ,
-                     ':description' => $descrip,
+                     ':title' => $title,
+                     ':categ' => $categ,
+                     ':descrip' => $descrip,
                    ]);
                    var_dump($req->debugDumpParams());
                         echo '
@@ -81,32 +82,24 @@
 ?>
 
 
-<div class='card-article col-lg-6 ' id='task' >
 
-  <form action="" method="POST" class='info-article'  id='editArticle'   >
-      <div  >
-            <label for=" " class="form-label">id  </label>
-            <input type="text" class="form-control" id="id" name="id"  
-                   value="<?php echo $articles['id'] ?> ">
-        </div>
-        <div  >
-            <label for=" " class="form-label">Titre  </label>
-            <input type="text" class="form-control" id="title_article" name="titre_article"  
-                  value="<?php echo $articles['titre_article'] ?> ">
-        </div>
-        <div  >
-            <label for=" " class="form-label">catégorie</label>
-            <input type="text" class="form-control" id="catégorie" name="catégorie" 
-                  value="<?php echo $articles['catégorie'] ?> ">
-        </div>
-        <div  >
-            <label for=" " class="form-label">description</label>
-            <input type="text" class="form-control" id="description" name="description"  
-                   value="<?php echo $articles['description'] ?> ">
-        </div>
-        <input type="hidden" name="id" value="<?php echo $articles['id'] ?>">
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
+<div class='card-article col-lg-6 ' id='task' >
+<div class="modArticle ">
+                <form action="modifier.php" method="POST"  class="info-article" >
+                    <h6>Titre de l'article :</h6>
+                    <input type="text" name='titre_article' class="titre-art" id="textareaTitreArticle"value="<?php echo $articles['titre_article'] ?> " >
+                     <h6>Catégorie de l'article :</h6>
+                     <input type="text" name="catégorie" class="cat-art" id="textareaCatArticle" value="<?php echo $articles['catégorie'] ?> ">
+                     <h6>Choisir une photo</h6>
+                    <input type="file" value="Ajouter une image" id="addImage"  > 
+                    <input   name="description"  cols="35" rows="10" placeholder="Ici taper votre article..." id="textareaArticle"  value="<?php echo $articles['description'] ?> "> /><br>
+                    <input type="hidden" name="id" value="<?php echo $articles['id'] ?>">
+                    <input type="submit" value="update"  id="button" >
+                </form>
+            </div>
 
 
  </div>
+
+
+ 
