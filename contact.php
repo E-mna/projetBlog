@@ -119,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $rst = $stmt->execute();
 
+            //echo $stmt->debugDumpParams();
             echo "formulaire envoyé";
           }
 
