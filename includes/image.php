@@ -1,7 +1,4 @@
- 
-
- 
-<!-- 
+ <!-- 
 
 <div class="image">
      <h1>Les images</h1>
@@ -12,10 +9,10 @@
 </div>
  -->
 
- 
-  <?php
- 
-/* var_dump($_FILES);
+
+ <?php
+
+   /* var_dump($_FILES);
 
    
 
@@ -27,7 +24,7 @@
             if(!isset($_SESSION["adresse"]))
             {
                $nom_dossier_visiteur = time();
-               // j'ai creer un dossier de l'itulisateur
+               // j'ai creer un dossier de l'utilisateur
                mkdir(".//images/".$nom_dossier_visiteur); 
                // je garde le dossier dans la var seesion
                $_SESSION["chemin_dossier_visiteur"] = mkdir(".//images/".$nom_dossier_visiteur);
@@ -44,4 +41,9 @@
          var_dump($_SESSION["adresse"]);
  } */
 
-?> 
+
+
+   if (isset($_POST['addimage'])) {
+      die('formulaire envoyé');
+   }
+   ?>

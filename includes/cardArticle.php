@@ -4,26 +4,27 @@ require_once "header.php";
 // connexion à la BDD
 require_once "connect.php";
 // je prépare ma requete
-$sql =('SELECT * FROM articles ORDER BY date_creation DESC ');
+$sql = ('SELECT * FROM articles ORDER BY date_creation DESC ');
 // je prépare ma requète
-$req = $pdo->prepare($sql); 
+$req = $pdo->prepare($sql);
 //j'execute
 $rst = $req->execute();
 
-if ($rst){
-    var_dump($req->debugDumpParams());
-    $data =$req->fetchAll();
+if ($rst) {
+  var_dump($req->debugDumpParams());
+  $data = $req->fetchAll();
 }
 echo "<section class='article  container-fluid'>
 <div class='content row'   id='container'>
 ";
-foreach($data as $articles){
-             $dateCreation = new DateTime($articles['date_creation']);   
-   echo"
+foreach ($data as $articles) {
+  var_dump($articles);
+  $dateCreation = new DateTime($articles['date_creation']);
+  echo "
              <div class='card-article col-lg-6 ' id='task' >
            
                 <div class='img-article'>
-                    <img  src='images/maj.webp' alt='img'>
+                    <img  src='{$articles['img']}   ' alt='img'>
                 </div>
                 <div class='info-article'  id='editArticle'   >
                     <h5>Titre de l'article: {$articles['titre_article']} {$articles['id']}    </h5>
@@ -43,18 +44,7 @@ foreach($data as $articles){
                 </div>
             </div>
         
-  " ;
+  ";
 }
 
 echo '</div></section>';
-?>
-
-
-
-
-
-
-
-
-
- 
